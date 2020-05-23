@@ -47,7 +47,7 @@ sub exists_in_password_wordlist {
     require WordListUtil::CLI;
 
     my %args = @_;
-    my $Zstrings = $args{strings};
+    my $strings = $args{strings};
 
     my $wl = WordListUtil::CLI::instantiate_wordlist($args{wordlist});
 
@@ -62,7 +62,7 @@ sub exists_in_password_wordlist {
         for (@$strings) {
             push @rows, {string=>$_, exists=>$wl->word_exists($_) ? 1:0};
         }
-        [200, "OK", \@res, {'table.fields'=>['string','exists']}];
+        [200, "OK", \@rows, {'table.fields'=>['string','exists']}];
     }
 }
 
