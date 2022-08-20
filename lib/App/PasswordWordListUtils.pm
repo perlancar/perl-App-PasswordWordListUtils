@@ -1,12 +1,12 @@
 package App::PasswordWordListUtils;
 
+use strict;
+use warnings;
+
 # AUTHORITY
 # DATE
 # DIST
 # VERSION
-
-use strict;
-use warnings;
 
 our %SPEC;
 
@@ -42,6 +42,13 @@ _
             cmdline_aliases => {q=>{}},
         },
     },
+
+    links => [
+        {
+            url => 'prog:wordlist',
+            summary => 'wordlist 0.267+ also has -t option to test words against wordlists, so you can use it directly',
+        },
+    ],
 };
 sub exists_in_password_wordlist {
     require WordListUtil::CLI;
